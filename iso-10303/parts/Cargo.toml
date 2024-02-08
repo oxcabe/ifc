@@ -1,0 +1,19 @@
+[package]
+authors = ["Junfeng Liu <china.liujunfeng@gmail.com>"]
+categories = ["cad"]
+description = "A Rust crate for reading STP files."
+edition = "2018"
+keywords = ["stp", "step"]
+license = "MIT"
+name = "iso-10303-parts"
+readme = "README.md"
+repository = "https://github.com/J-F-Liu/iso-10303.git"
+version = "0.5.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+iso-10303 = {version = "0.5", path = "../"}
+
+[profile.release]
+debug = true

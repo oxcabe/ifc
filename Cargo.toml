@@ -4,4 +4,6 @@ members = [
     "ifc-generator"
 ]
 
+exclude = ["iso-10303"]
+
 resolver = "2"

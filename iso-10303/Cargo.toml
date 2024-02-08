@@ -1,0 +1,39 @@
+[package]
+authors = ["Junfeng Liu <china.liujunfeng@gmail.com>"]
+categories = ["cad", "parser-implementations"]
+description = "A Rust crate for generating STEP reader code."
+edition = "2018"
+keywords = ["stp", "step"]
+license = "MIT"
+name = "iso-10303"
+readme = "README.md"
+repository = "https://github.com/J-F-Liu/iso-10303.git"
+version = "0.5.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+fast-float = "0.2"
+heck = {version = "0.3", optional = true}
+petgraph = {version = "0.5.1", optional = true}
+pom = "3.2"
+proc-macro2 = {version = "1.0", optional = true}
+quote = {version = "1.0", optional = true}
+structopt = "0.3"
+
+[features]
+gencode = ["quote", "proc-macro2", "heck"]
+gengraph = ["heck", "petgraph"]
+
+[[bin]]
+name = "gencode"
+path = "src/generator/gencode/main.rs"
+required-features = ["gencode"]
+
+[[bin]]
+name = "gengraph"
+path = "src/generator/gengraph/main.rs"
+required-features = ["gengraph"]
+
+[workspace]
+members = ["parts"]

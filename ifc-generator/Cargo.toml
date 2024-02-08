@@ -3,6 +3,6 @@ name = "ifc-generator"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
+iso-10303 = { path = "../iso-10303", features = ["gencode"] }
+thiserror = "1.0.56"
